@@ -56,7 +56,7 @@ function steam_auth_load_theme()
 						WHERE member_name = {string:steamid}
 						LIMIT 1',
 						array(
-							'steamid' => 'steamuser-' . $steamid,
+							'steamid' => $steamid,
 						)
 					);
 
@@ -81,7 +81,7 @@ function steam_auth_load_theme()
 								'send_welcome_email' => false,
 								'require' => 'nothing',
 								'extra_register_vars' => array(
-									'member_name' => 'steamuser-' . $steamid,
+									'member_name' => $steamid,
 									'real_name' => $player->personaname,
 									'avatar' => str_replace('https://', 'http://', $player->avatarmedium),
 								),
@@ -102,7 +102,7 @@ function steam_auth_load_theme()
 							WHERE member_name = {string:steamid}
 							LIMIT 1',
 							array(
-								'steamid' => 'steamuser-' . $steamid,
+								'steamid' => $steamid,
 							)
 						);
 
